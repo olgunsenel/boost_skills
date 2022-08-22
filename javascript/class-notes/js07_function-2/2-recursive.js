@@ -14,7 +14,9 @@ console.log("****** 2 - RECURSION ********");
 
 //? FIBONACCI terimleri:  0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
-const fibo = (n) => {};
+const fibo = (n) => {
+  
+};
 
 const n = +prompt("n terimini giriniz:");
 if (n <= 0) {
