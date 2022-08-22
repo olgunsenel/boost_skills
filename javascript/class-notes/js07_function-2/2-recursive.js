@@ -10,7 +10,7 @@
 //* ORNEK: Girilen n. terime kadar Fibonacci sayılarının toplamini
 //* hesaplayarak yazdiran fonksiyonu recursive olarak kodlayiniz.
 
-console.log("****** 5- RECURSION ********");
+console.log("****** 2 - RECURSION ********");
 
 //? FIBONACCI terimleri:  0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
