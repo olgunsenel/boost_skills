@@ -73,6 +73,9 @@
 
   /*? tüm div'lerin büyüme oranına 1 verdik.*/
   flex-grow: 1;
+
+  /*! flex-basis item'lara ihtiyacı kadar yer tahsis ediyor veya sadece icerigin buyuklugu kadar bir uzunluk veriyor (flex-basis:0); */
+  flex-basis: 0;
 }
 
 /*? grow2 classindakiler diğerlerine göre 2 kat daha fazla büyüyebilir.*/
@@ -88,4 +91,32 @@ div.grow3 {
 /*? nogrow classindakiler diğerlerine göre hiç büyümezler*/
 div.nogrow {
   flex-grow: 0;
+}
+
+/** FLEX-GROW  (width)*/
+
+.container3 {
+  background-color: rgb(118, 105, 255);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 50vw;
+}
+
+.container3 div {
+  background-color: lightcyan;
+}
+div.div1 {
+  width: 10%;
+}
+div.div2 {
+  width: 20%;
+}
+div.div3 {
+  width: 30%;
+}
+div.div4 {
+  width: 40%;
 }
