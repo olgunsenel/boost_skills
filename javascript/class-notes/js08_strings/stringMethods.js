@@ -7,7 +7,7 @@ console.log("*** STRING METHODS ***");
 
 //!1- Klasik yöntem (String Literals) ile string tanimlanirsa bu string
 //! bir primitive degiskendir.
-const str1 = "Clarusway";
+let str1 = "Clarusway";
 //Char => C, l, a,....
 const str2 = " Hello";
 const str3 = " Full Stack";
@@ -36,3 +36,41 @@ console.log(str5, typeof str5);
 //* ---------------------------------------------------
 //*  concat() - immutable
 //* ---------------------------------------------------
+
+console.log(str1.concat(str2)); //* Orjinal degerler bozulmaz
+console.log(str1, str2);
+
+//? Assigning ile degiskenin degeri degistirilebilir.
+str1 = str1.concat(str3, " Path");
+console.log(str1);
+
+//* ----------------------------------------------------------
+//* toUpperCase(), toLowerCase() --immutable
+//* ----------------------------------------------------------
+
+const myName = "Noah Adams";
+console.log(myName.toUpperCase());
+console.log(myName.toLowerCase());
+
+let yourName = "ismet";
+// yourName = yourName.toUpperCase();
+// yourName = yourName.toLocaleUpperCase('tr');
+yourName = yourName.toLocaleUpperCase();
+console.log(yourName);
+
+//! ORNEK: iki string'i esit veya degil diye kiyaslayarak sonucu
+//! donduren fonksiyonu yaziniz.
+
+// const esitMi = (str1, str2) => {
+//   return str1.toLocaleUpperCase() === str2.toLocaleUpperCase()
+//     ? `${str1} ile ${str2} Esittir`
+//     : `${str1} ile ${str2} Esit degildir`;
+// };
+
+const esitMi = (str1, str2) =>
+  str1.toLocaleUpperCase() === str2.toLocaleUpperCase()
+    ? `${str1} ile ${str2} Esittir`
+    : `${str1} ile ${str2} Esit degildir`;
+
+console.log(esitMi("MerHaba", "MERHABA"));
+console.log(esitMi("Hello", "Hell"));
