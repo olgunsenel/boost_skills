@@ -64,6 +64,9 @@ Build a responsive web page similar to [Project 004 Snapshot](./project04.png)
 	- Set container background color and margin
 	- Define others color-size-padding etc...
 
+### Images
+[Images Folder](./images/)
+
 
 ## Notes
 
