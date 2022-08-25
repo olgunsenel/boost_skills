@@ -1,4 +1,4 @@
-## ASSIGMENT-5 (CSS-GRID IOS CALCULATOR)
+## ASSIGMENT-4 (CSS-GRID IOS CALCULATOR)
 
 - Belirtilen linkte görüldüğü gibi bir IOS hesap makinasi görüntüsünü CSS-GRID yapısını kullanarak tasarlayınız.
 
