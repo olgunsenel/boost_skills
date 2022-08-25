@@ -87,6 +87,10 @@ h1 {
   .col {
     width: 50%;
   }
+  h1 {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 600px) {
@@ -103,5 +107,9 @@ h1 {
   }
   .col {
     width: 100%;
+  }
+  h1 {
+    width: 12rem;
+    font-size: 1.2rem;
   }
 }
