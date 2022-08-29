@@ -138,7 +138,6 @@ console.log(array1);
 //? ===========================================================
 //?  DIZI ERISIM METOTLARI
 //? ===========================================================
-
 const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
 
 //* includes()
@@ -147,6 +146,12 @@ const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
 //* indexOf(),  lastIndexOf();
 //*-----------------------------------------------------------
 //* ilk eslesen indeksi dondurur.
+
+//! Odev: prompt ile konsoldan bir sayi istenmeli (string veya number
+//! olarak) eger bu girilen sayi, dizi icerisinde bulunuyorsa indisi
+//! (string ve number olarak ayri) yazdirilmalidir. Eger bulunamadiysa
+//! Aranilan bulunamamistir yazidirilmalidir.
+//!-----------------------------------------------------------
 
 //* join()
 //*-----------------------------------------------------------
