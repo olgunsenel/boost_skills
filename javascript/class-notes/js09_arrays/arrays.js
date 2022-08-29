@@ -138,3 +138,52 @@ console.log(array1);
 //? ===========================================================
 //?  DIZI ERISIM METOTLARI
 //? ===========================================================
+
+const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
+
+//* includes()
+//*-----------------------------------------------------------
+
+//* indexOf(),  lastIndexOf();
+//*-----------------------------------------------------------
+//* ilk eslesen indeksi dondurur.
+
+//* join()
+//*-----------------------------------------------------------
+//? join, dizinin elamanlari birlestirip string hale cevirir.
+
+//* toString()
+//*-----------------------------------------------------------
+//? toString fonksiyonu sadece dizinin elemanlarinin aralarina
+//? (virgul) koyarak birlestirir ve string yapar.
+
+//* slice()
+//*-----------------------------------------------------------
+
+//* concat()
+//*-----------------------------------------------------------
+
+//* every()
+//*-----------------------------------------------------------
+
+//? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore
+//? test gerceklestirir.Tum elemanlar icin test basarili ise
+//? true aksi takdirde false deger dondurur.
+
+//* some()
+//*-----------------------------------------------------------
+//? Aldigi callback fonksiyonuna gore test gerceklestirir.
+//? En az bir eleman icin bile test basarili ise true aksi
+//? takdirde false deger dondurur.
+
+//* find()
+//*-----------------------------------------------------------
+//? Aldigi callback fonksiyonuna gore test gerceklestirir.
+//? Kosulu saglayan ilk dizi elemaninin dondurur.
+//? Eger hic bir eleman kosulu saglamazsa undefined dondurur.
+
+//* findIndex()
+//*-----------------------------------------------------------
+//? Aldigi callback fonksiyonuna gore test gerceklestirir.
+//? Kosulu saglayan ilk dizi elemaninin indeksini dondurur.
+//? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
