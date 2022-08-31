@@ -51,22 +51,22 @@ console.log("ORTALAMA:", toplam / notlar.length);
 
 const students = ["ahmet", "mehmet", "ismet", "ahmet", "can", "mehmet", "cem"];
 
-const findStudents = (arr, search) => {
-  let counter = 0;
-  for (let i in arr) {
-    if (search === arr[i]) {
-      counter++;
-    }
-  }
-  if (!counter) {
-    return `${search} can not be found`;
-  } else {
-    return `${search} found ${counter} times`;
-  }
-};
+// const findStudents = (arr, search) => {
+//   let counter = 0;
+//   for (let i in arr) {
+//     if (search === arr[i]) {
+//       counter++;
+//     }
+//   }
+//   if (!counter) {
+//     return `${search} can not be found`;
+//   } else {
+//     return `${search} found ${counter} times`;
+//   }
+// };
 
-const name = prompt("Please enter a name").toLowerCase();
-console.log(findStudents(students, name));
+// const name = prompt("Please enter a name").toLowerCase();
+// console.log(findStudents(students, name));
 
 //* ======================================================
 //*                   FOR-OF LOOP
@@ -75,3 +75,24 @@ console.log(findStudents(students, name));
 //* for of dongusu, for in dongusunun bir cok veri yapisini
 //* kapsayacak sekilde guncellenmis halidir. Bu dongude dizi
 //* icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
+
+const findStudentsOf = (arr, search) => {
+  let counter = 0;
+  for (let item of arr) {
+    //? Ternary
+    // search === item ? counter++ : null;
+
+    //! Short-circuit yöntemi: && => kosul dogru (true) ise ifadeyi calisitir.
+    search === item && counter++;
+
+    //! Short-circuit yöntemi: || => kosul yanlis (false) ise ifadeyi çalıştır.
+    search === item || counter++;
+  }
+
+  return !counter
+    ? `${search} can not be found`
+    : `${search} found ${counter} times`;
+};
+
+const studentName = prompt("Please enter a name").toLowerCase();
+console.log(findStudentsOf(students, studentName));
