@@ -1,13 +1,13 @@
-
-
-
 //********************************************/
 //* STYLE:SCSS
 //********************************************/
-body {
-  font-family: $fontFamily;
-  background-color: $bgColor;
-  font-size: $fontSize;
-  color: $fontColor;
-}
 
+@use "./abstracts/variables" as v;
+// @import "./abstracts/colors";
+
+body {
+  font-family: v.$fontFamily;
+  background-color: v.$bgColor;
+  font-size: v.$fontSize;
+  color: v.$fontColor;
+}
