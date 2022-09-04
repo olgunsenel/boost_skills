@@ -35,4 +35,4 @@ for (let i = 0; i < notlar.length; i++) {
   toplam += notlar[i];
 }
 
-console.log("Ortalama" toplam / notlar.length);
+console.log(`Toplam =`, toplam/notlar.length);
