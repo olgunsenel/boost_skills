@@ -83,3 +83,37 @@ console.log(worker);
 //* object copy
 
 
+// const thatman = {
+//     name : `john`,
+//     surname : `gotten`,
+//     age : 36,
+//     job : `fuller`,
+//     language : [`C++`, `Ruby`, `Python`, `Go`, `JavaScript`],
+//     salary : 36000
+//     calculateAge: function () {
+//         return new Date().getFullYear() - this.age;
+//     }
+//     summary: () => {
+//         console.log(this);
+//         return 
+//     }
+
+
+const insanlar = {
+    kucuk: {
+        name: `fatih`,
+        surname: `celik`,
+        age: 36
+    },
+    buyuk: {
+        name: `fatih`,
+        surname: `celik`,
+        age: 36,
+        license: false
+    }
+};
+
+console.log(insanlar);
+
+console.log(insanlar.buyuk.age);
+    
