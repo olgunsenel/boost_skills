@@ -81,9 +81,37 @@ team.forEach((p) => {
   console.log("Age:", age);
 });
 
+//* functionund dondurdugu obje dogrudan dest. yapilabilir
+const getInfo = () => {
+  return {
+    id: 1,
+    productName: "Iphone",
+    price: 30000,
+  };
+};
+
+console.log(getInfo());
+const { productName, price } = getInfo();
+console.log("Product Name:", productName);
+console.log("Product Price:", price);
+
+//? Fonksyionlarin obje parametreleri dogrudan dest. yapilabilir.
+const calculate = ({ id, price }) => {
+  console.log(price * 1.1);
+};
+
+calculate({ id: 1, price: 3000 });
+
 //* ======================================================
 //*  DESTRUCTURING (ARRAY)
 //* ======================================================
+const names = ["Ahmet", "Mehmet", "İsmet", "Saffet"];
+
+//*Classical
+const mehmet = names[1]; //* indexing
+
+const [p1, p2, , p4] = names;
+console.log(p1, p2, p4);
 
 //*======================================================
 //*  REST (...)
