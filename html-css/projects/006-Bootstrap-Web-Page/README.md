@@ -8,7 +8,9 @@ Use the photos you found on the internet in the project solution.
 
 ## Learning Outcomes
 
-![Project 006 Snapshot](./bootstrap.gif)
+![Project 006 Snapshot](./bootstrap.gif);
+
+Make a web page like in the [example project](https://harveycla.github.io/HarveyTech_with_Bootstrap5/).
 
    
 ## Problem Statement
