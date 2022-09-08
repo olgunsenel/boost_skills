@@ -84,3 +84,9 @@ console.log(goksel.slice(16));
 const kaya = `adi bahtiyar`;
 console.log(kaya.split(""));
 
+const ramazan = "    Hoş geldin ya şehri Ramazan     ";
+console.log(ramazan);
+console.log(ramazan.length); // 36
+console.log(ramazan.trim());
+console.log(ramazan.trim().length); //27
+
