@@ -1,0 +1,7 @@
+/*? ul li gibi altalta olan yazilari float ile yanyana dizebiliyoruz */
+
+.header__right {
+  float: right;
+}
+
+/*?   */
