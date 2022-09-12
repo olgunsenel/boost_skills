@@ -26,6 +26,16 @@ button.style.padding = "1rem";
 button.style.fontSize = "1.1rem";
 myInput.style.padding = "1rem";
 
+
+button.style.padding = "1rem";
+muInput.style.fontSize =`1.1rem`;
+
+const list = document.getElementsByTagName("li");
+console.log(list);
+list[2].style.color = red;
+
+
+
 //*===========================================
 //*          GETELEMENTSBYTAGNAME()
 //*===========================================
