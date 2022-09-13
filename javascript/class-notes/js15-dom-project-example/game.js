@@ -29,14 +29,27 @@ document.querySelector(".check-btn").addEventListener("click", () => {
       document.querySelector(".top-score").textContent = topScore;
     }
     document.querySelector(".secret-number").textContent = randomNumber;
+
+    //! eger rasgele!= input.value
   } else {
     score--;
+    if (score > 0) {
+      guessInput > randomNumber
+        ? (msg.innerHTML = `<i class="fa-solid fa-arrow-trend-down fa-2x"></i> DECREASE `)
+        : (msg.innerHTML = `<i class="fa-solid fa-arrow-trend-up fa-2x"></i> INCREASE `);
+    } else {
+      msg.innerHTML = `You Lost <i class="fa-regular fa-face-sad-tear fa-2x"></i>`;
+      document.querySelector(".secret-number").textContent = randomNumber;
+      body.className = "bg-danger";
+      document.querySelector(".check-btn").disabled = true;
+    }
 
-    guessInput > randomNumber
-      ? (msg.innerText = "DECREASE")
-      : (msg.innerText = "INCREASE");
+    document.querySelector(".score").textContent = score;
   }
 });
+
+//* again basildiginda oyunu baslangic dgerlerin kur
+document.querySelector(".again").addEventListener("click", () => {});
 
 //? eger score > topScore
 //?     topScore = score
