@@ -47,4 +47,4 @@ At the end of the this project, students will be able to;
 
 ## Resources
 
-- [Images]("./img/")
+- [Images]("https://github.com/clarusway/clarusway-full-stack-tr-12-22/tree/main/javascript/projects/001_Checkout_Page/img")
