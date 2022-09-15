@@ -27,6 +27,7 @@
   /*? olan bir animasyonu hover'a  vermek yerine dogrdudan elemena vermek
   /*? ve hover'ında  ise animation-play-state: paused ile durdurmak mantikli olabilir.; */
   animation-iteration-count: 1;
+  animation-direction: alternate;
 }
 
 /*?  Keyframe: animasyon noktalarinin ve zamanlarinin tanimlanmasini saglar
