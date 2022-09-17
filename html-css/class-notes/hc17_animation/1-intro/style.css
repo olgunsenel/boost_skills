@@ -18,7 +18,7 @@
 .outer:hover .inner {
   /* background-color: chartreuse;
   transform: translateX(100%); */
-  animation: travel 1s ease-in-out;
+  animation: travel 4s ease-in-out;
 
   /*! animasyon tekrar adedi */
   /*! **********************************/
@@ -26,8 +26,38 @@
   /*? inifinite yapilirsa surekli calisir. Bu sebeple sonsuz
   /*? olan bir animasyonu hover'a  vermek yerine dogrdudan elemena vermek
   /*? ve hover'ında  ise animation-play-state: paused ile durdurmak mantikli olabilir.; */
+<<<<<<< HEAD
   animation-iteration-count: 1;
   animation-direction: alternate;
+=======
+  /* animation-iteration-count: 4; */
+
+  /*! animasyon yonu */
+  /*! **********************************/
+  /*? animsyonun baslangic yonu */
+  /*? normal,  reverse, alternate, alternate-reverse */
+  /* animation-direction: alternate; */
+
+  /*! animasyon doldurma modu */
+  /*! ***********************************/
+  /*? animasyonun, animasyon yonune de bagli olarak hangi keyframe de bitecegini gosterir. */
+  /*?  none, forwards, backwards, both */
+
+  animation-fill-mode: backwards; /** animasyon ilk keyframe'de biter*/
+  animation-fill-mode: forwards; /** animasyon son keyframe'de biter*/
+
+  /*! animasyon gecikmesi */
+  /*! ***********************************/
+  /*? animasyon icin baslamasi gecikmesini belirler */
+  /*? Negatif gecikme baslama gecikmesi olarak degil
+  /*? ilgili suredeki keyframe'lerin atlanilmasini saglar */
+  animation-delay: 1s;
+  /* animation-delay: -2s; */
+
+  /*! Kisa yol tanimlamasi
+  /*! ***********************************/
+  animation: travel 2s ease-in-out 0.5s 2 alternate forwards;
+>>>>>>> 4ce1b1b9a7bf5bcd8b390b04c265352ea66738ff
 }
 
 /*?  Keyframe: animasyon noktalarinin ve zamanlarinin tanimlanmasini saglar
@@ -37,7 +67,6 @@
   0% {
     transform: translateX(0);
   }
-
   /*! baslangica gore 100 birim asagisi */
   33% {
     transform: translateY(100%);
