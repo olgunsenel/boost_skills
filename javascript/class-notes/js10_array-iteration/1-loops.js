@@ -82,11 +82,13 @@ const findStudentsOf = (arr, search) => {
     //? Ternary
     // search === item ? counter++ : null;
 
-    //! Short-circuit yöntemi: && => kosul dogru (true) ise ifadeyi calisitir.
+    //! Short-circuit yöntemi: && => kosul dogru (true) ise ifadeyi calistitir.
     search === item && counter++;
 
-    //! Short-circuit yöntemi: || => kosul yanlis (false) ise ifadeyi çalıştır.
-    // search === item || counter++;
+    //! Short-circuit yöntemi: || => kosul yanlis (false) ise ifadeyi calistirir.
+    search === item || counter--;
+    //veya
+    search !== item || counter++;
   }
 
   return !counter

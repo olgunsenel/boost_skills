@@ -78,7 +78,7 @@ const products = [
 ];
 //! Orjinal diziyi degistidik.
 //?For UpperCase
-// products.map((p, i, arr) => (arr[i] = p.charAt(0).toUpperCase()));
+products.map((p, i, arr) => (arr[i] = p.charAt(0).toUpperCase()));
 
 //?For Capitilize
 products.map((p, i, arr) => (arr[i] = p[0].toUpperCase() + p.slice(1)));
