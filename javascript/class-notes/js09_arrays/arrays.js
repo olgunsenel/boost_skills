@@ -1,237 +1,132 @@
-// ?=========================================================
-// ?                DIZILER (ARRAYS)
-// ?=========================================================
+// const ifade = [-5, 15, 22, -4, 45, 78, -25];
+// let toplam = 0;
+// for (let i = 0; i < ifade.length; i++) {
+//   toplam += ifade[i];
+// };
 
-console.log("***** ARRAYS ******");
+const dizi = [-5, 15, 22, -4, 45, 78, -25];
 
-//* Dizi Tanimlama
-//* ---------------------------------------------------------
+negatives = [];
+positives = [];
 
-// ! 1.Yöntem (Array Literal) - Tercih edilen yöntem
-const isimler = ["ahmet", "ismet", "can", "canan", "matheww"];
-console.log(isimler);
-console.log(typeof isimler);
-console.log(isimler.length);
+const topla = (n) => {
+  for (let i = 0; i < n.length; i++) {
+  if (n[i] > 0) {
+    positives.push(n[i]);
+  } else {
+    negatives.push(n[i]);
+  }
+};
+//   console.log(`Pozitif toplami ${positives}`);
+//   console.log(`Negatif toplami ${negatives}`);
+};
+topla(dizi);
+console.log(positives);
+console.log(negatives);
 
-const bosDizi = [];
-console.log(bosDizi);
 
-// ! 2.Yöntem (Object Constructor)
-const diller = new Array("C++", "javascript", "Assembly", "Go", "Ruby");
-console.log(diller);
+//? Dizideki notlarin ortalamasini hesaplayiniz.
 
-const numbers = new Array(3, 2, 1);
-console.log(numbers);
+// const notlar = [55, 77, 23, 89, 100];
+// let sum = 0;
+// for (let i = 0; i < notlar.length; i++) {
+//   sum += notlar[i]
+// }
+// console.log(`Notlarin ortalamasi`, sum / notlar.length, `dir.`);
 
-//! 10 elemanlik bos bir Array oluşturdu
-const numbers1 = new Array(10);
-console.log(numbers1);
+const adlar = [`ali`, `veli`, `deli`];
+const soyAdlar = [`seni`, `beni`, `onu`];
 
-// ! 3.Yöntem (Array.of())
-const veriler = Array.of(1, 2, 3);
-console.log(veriler);
+const birlestir = (x, y) => {
+  let adVeSoyadlar = [];
+  for (let i in x) {
+    adVeSoyadlar[i] = `${x[i]} ${y[i]}`
+  }
+  return adVeSoyadlar;
+};
+console.log(birlestir(adlar, soyAdlar));
+// birlestir(adlar, soyAdlar);
 
-const veri = Array.of("Deneme");
-console.log(veri);
+//* SORU: Ogrenciler dizisinde ogrenci isimleri saklanmaktadir.
+//* ogrencileri aramamizi saglayacak ve aranilan ogrenciden
+//* ne kadar sayida bulunuldugunu  ana programa döndürecek bir
+//* fonksiyonu yaziniz. Eger aranilan isimde bir ogrenci yok ise
+//* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
+//*--------------------------------------------------------
 
-//* Diziden Veri Okuma-Yazma (indisleme)
-//* ---------------------------------------------------------
-//!  Diziden veri okuma
-console.log(diller[1]);
-const go = diller[3];
-console.log(go);
+// const students = ["ahmet", "mehmet", "ismet", "ahmet", "can", "mehmet", "cem"];
+// const name = prompt(`isim gir: `).toLowerCase();
 
-console.log(isimler[isimler.length - 1]);
-//? at()
-console.log(isimler.at(-1));
+// const ogrenciBul = (arr, search) => {
+//   let count = 0;
+//   for (let i in arr) {
+//     if (arr[i] === search) {
+//       count++;
+//     }
+//   }
+//   if (count === 0) {
+//     return `${search} can not be found`
+//   } else {
+//     if (count > 1) {
+//       return `${search} found ${count} times`
+//     } else {
+//       return `${search} found ${count} time`
+//     }
+//   }
+// };
+// console.log(ogrenciBul(students, name));
 
-//!  Diziye veri yazma
-// const isimler = ["ahmet", "ismet", "can", "canan", "Matheww"];
-isimler[1] = "saffet";
-console.log(isimler);
 
-//!Uncaught TypeError: Assignment to constant variable.
-// isimler = ["Ali", "Veli"];
+//? Dizideki herbir fiyati konsola bastiriniz.
 
-//? numbers dizisinin son elementinin degerini bir arttirin
-console.log(numbers);
-numbers[numbers.length - 1]++;
-console.log(numbers);
+const prices = [100, 250, 50, 89];
 
-const yaslar = [22, 44, 55];
-const kisiler = ["Ahmet", "Can", 2022, 2022 - 1990, true, yaslar];
+prices.forEach((yazdir) => console.log(yazdir));
 
-console.log(kisiler);
+let sum = 0;
 
-//? kisiler icerisindeki yaslar dizisinde bulunan 55 yasini konsola yazdiriniz.
 
-const yas55 = kisiler[5][2];
-console.log(yas55);
+prices.forEach((topla) => (sum += topla));
+console.log(`Toplam`, sum, `dur.`);
 
-//? kisiler icerisindeki yaslar dizisinde bulunan 44 yasini bir eksiltiniz.
-kisiler[5][1]--; //?43
-console.log(kisiler);
-console.log(yaslar);
+//?prices dizisindeki her bir ara toplam degerini
+//? konsola bastiriniz. Ayrica her bir fiyata %10 zam yapiniz.
 
-//? ===========================================================
-//?  DIZIYI DEGISTIREN (MUTATOR) METOTLAR
-//? ===========================================================
+let araToplam = 0;
+prices.forEach((ara, index, arr) => {
+  araToplam += ara;
+  console.log(`${index + 1}.iteration: ${araToplam}`);
+  arr[index] = Math.trunc(ara * 1.1);
+});
+console.log(prices);
 
-const arabalar = ["BMW", "Mercedes", "Fiat", "Anadol"];
 
-//** pop() son elemanı siler ve sildigi elemani dondurur.
-const silinen = arabalar.pop();
-console.log(arabalar, silinen);
+let namess = [`Must`, `Has`, `Ali`, `Olg`, `Emi`];
 
-//* push() dizinin sonuna eleman ekler ve dizinin son eleman sayisini dondurur.
+const buyut = namess.map((buyuk) => buyuk.toUpperCase());
+console.log(buyut, namess);
 
-const n = arabalar.push("Citroen");
-console.log(arabalar, n);
+//? tlPrices dizisindeki rakamlarin Euro ve dolar
+//? karsiliklarini hesaplatarak yeni dizelere kaydediniz
 
-//* unshift dizinin 0. indeksine eleman ekler ve dizinin son eleman sayisini dondurur.
-const n1 = arabalar.unshift("Audi");
-console.log(arabalar, n1);
+const euro = 18.23;
+const dolar = 18.19;
+const tlPrices = [100, 150, 100, 50, 80];
 
-//* dizinin 0. indeks elemanini siler ve silenen elemani dondurur
-const audi = arabalar.shift();
-console.log(arabalar, audi);
+const kur = tlPrices.map((para) => Number((para/euro).toPrecision(3)));
+console.log(kur);
 
-//* splice()
-//? 1.parametre: eklenecek indis numarasi
-//? 2.parametre: 0 ise araya ekleme, 1 ise uzerine yazma
-//? 3.parametre: yeni eklenecek veri
-arabalar.splice(1, 0, "Passat");
-console.log(arabalar);
+//?-------------- ÖRNEK -------------------
+//? Maasi 10000'den buyuk olanlari ayri bir diziye saklayalim
 
-arabalar.splice(3, 1, "Honda", "Toyota");
-console.log(arabalar);
+const salaries = [5500, 8000, 6500, 9000, 10000, 15000, 25000];
 
-//* Dizinin tamamini ters siraya cevirir.
-arabalar.reverse();
-console.log(arabalar);
+bindenBuyuk = salaries.filter((z) => z >= 10000 && z <= 20000);
+console.log(bindenBuyuk);
 
-//* sort() Diziyi alfabetik olarak siralar.
-isimler.sort();
-console.log(isimler);
+zam = salaries
+.filter((on) => on < 9000)
+.map((za) => Math.trunc(za*1.1));
+console.log(zam);
 
-//! Alfabetik siraladigi icin dogru sonuc cikmayabilir.
-const sayilar = [2, 111, 3, 22, 1, 11, 5, 7, 6];
-sayilar.sort();
-console.log(sayilar);
 
-//* sort metodu diziyi iterasyona ugratir ve parametre olark aldigi arrow
-//* fonksiyonunu dizinin her bir elemanina uygular. Bu sayede kucuk sayilar
-//* ile buyuk sayilari yer degistirerek siralama islemini gerceklestirir.
-sayilar.sort((a, b) => a - b);
-console.log(sayilar);
-
-//* fill()
-const array1 = [1, 2, 3, 4];
-array1.fill(0);
-console.log(array1);
-
-array1.fill(1, 2, 4);
-console.log(array1);
-array1.fill(-1, 1); //* 1. eleman ve sonrasini -1 yap
-console.log(array1);
-
-//? ===========================================================
-//?  DIZI ERISIM METOTLARI
-//? ===========================================================
-const sayilar1 = [3, 5, 2, "2", "uc", 2, "3", "bes", "5"];
-
-//* includes()
-//*-----------------------------------------------------------
-console.log(sayilar1.includes(5)); //? true
-console.log(sayilar1.includes("5")); //? false
-
-//* indexOf(), lastIndexOf();
-//*-----------------------------------------------------------
-//* ilk eslesen indeksi dondurur.
-
-console.log(sayilar1.indexOf(2)); //? 2
-console.log(sayilar1.lastIndexOf(2)); //? 5
-console.log(sayilar1.lastIndexOf(4)); //? -1
-
-//! Odev: prompt ile konsoldan bir sayi istenmeli (string veya number
-//! olarak) eger bu girilen sayi, dizi icerisinde bulunuyorsa indisi
-//! (string ve number olarak ayri) yazdirilmalidir. Eger bulunamadiysa
-//! Aranilan bulunamamistir yazidirilmalidir.
-//!-----------------------------------------------------------
-
-//* join()
-//*-----------------------------------------------------------
-//? join, dizinin elamanlari birlestirip string hale cevirir.
-console.log(sayilar1.join(" "));
-console.log(sayilar1.join()); // 3,5...
-console.log(sayilar1);
-
-//* toString()
-//*-----------------------------------------------------------
-//? toString fonksiyonu sadece dizinin elemanlarinin aralarina
-//? (virgul) koyarak birlestirir ve string yapar.
-console.log(sayilar1.toString());
-
-//* slice()
-//*-----------------------------------------------------------
-const arabalar1 = ["BMW", "Mercedes", "Fiat", "Anadol"];
-const yeniArabalar = arabalar1.slice(2);
-console.log(yeniArabalar, arabalar1);
-
-const yeniArabalar1 = arabalar1.slice(1, 3);
-console.log(yeniArabalar1);
-
-//* concat()
-//*-----------------------------------------------------------
-const yazilar = ["Bugun", "hava", "cok", "guzel"];
-const numbersArr = [1, 2, 5, 7];
-const combinedArr = yazilar.concat(
-  true,
-  numbersArr,
-  ["aslinda", "cok", "sicak"],
-  [["x", "y"]]
-);
-console.log(combinedArr);
-
-//* every()
-//*-----------------------------------------------------------
-//? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore
-//? test gerceklestirir.Tum elemanlar icin test basarili ise
-//? true aksi takdirde false deger dondurur.
-
-const yasArray = [18, 22, 78, 34, 78, 79, 15];
-const check = yasArray.every((yas) => yas >= 18);
-check
-  ? console.log("Dizideki herkesin yasi 18'den buyuktur")
-  : console.log("Dizide 18 yas alti var");
-
-//* some()
-//*-----------------------------------------------------------
-//? Aldigi callback fonksiyonuna gore test gerceklestirir.
-//? En az bir eleman icin bile test basarili ise true aksi
-//? takdirde false deger dondurur.
-
-const buyuk80 = yasArray.some((y) => y >= 80);
-console.log(buyuk80); //? false
-
-//* find(), findLast()
-//*-----------------------------------------------------------
-//? Aldigi callback fonksiyonuna gore test gerceklestirir.
-//? Kosulu saglayan ilk dizi elemaninin dondurur.
-//? Eger hic bir eleman kosulu saglamazsa undefined dondurur.
-
-//?Ornek: Yasi 30 dan buyuk olan ilk elemani yazdirin
-const yasIlk30 = yasArray.find((yas) => yas >= 30);
-const yasSon30 = yasArray.findLast((yas) => yas >= 30);
-console.log(yasIlk30, yasSon30);
-
-//* findIndex()
-//*-----------------------------------------------------------
-//? Aldigi callback fonksiyonuna gore test gerceklestirir.
-//? Kosulu saglayan ilk dizi elemaninin indeksini dondurur.
-//? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
-
-//?Ornek: Yasi 30 dan buyuk olan ilk elemanin indexini yazdirin
-
-const foundIndex = yasArray.findIndex((yas) => yas >= 30);
-console.log(foundIndex);
