@@ -34,9 +34,14 @@ const createListElement = (newTodo) => {
   li.appendChild(okIcon);
 
   //? todo basligi icin bir p elementi ve yazi dugumu olusturarak li'ye bagla
+  const p = document.createElement("p");
+  const pTextNode = document.createTextNode(newTodo.text);
+  p.appendChild(pTextNode);
+  li.appendChild(p);
 
   //? delete ikonu olustur ve li elementine bagla
-  console.log(li);
-
+  const deleteIcon = document.createElement("i");
+  deleteIcon.setAttribute("class", "fas fa-trash");
+  li.appendChild(deleteIcon);
   todoUl.appendChild(li);
 };
