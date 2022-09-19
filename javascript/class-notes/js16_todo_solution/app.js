@@ -22,13 +22,20 @@ addBtn.addEventListener("click", () => {
 });
 
 const createListElement = (newTodo) => {
+  //? yeni bir li elementi olustur ve bu elemente obje icerisindeki
+  //? id degerini ve completed class'ini ata
   const li = document.createElement("li");
   // li.id = newTodo.id;
   li.setAttribute("id", newTodo.id);
 
+  //? okey ikonu olustur ve li elementine bagla
   const okIcon = document.createElement("i");
   okIcon.setAttribute("class", "fas fa-check");
   li.appendChild(okIcon);
+
+  //? todo basligi icin bir p elementi ve yazi dugumu olusturarak li'ye bagla
+
+  //? delete ikonu olustur ve li elementine bagla
   console.log(li);
 
   todoUl.appendChild(li);
