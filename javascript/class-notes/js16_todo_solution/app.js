@@ -17,7 +17,9 @@ addBtn.addEventListener("click", () => {
       text: todoInput.value,
     };
 
+    //! yeni bir li elementi olusturup bunu DOM'a bas
     createListElement(newTodo);
+    todoInput.value = "";
   }
 });
 
@@ -43,5 +45,19 @@ const createListElement = (newTodo) => {
   const deleteIcon = document.createElement("i");
   deleteIcon.setAttribute("class", "fas fa-trash");
   li.appendChild(deleteIcon);
+
+  //? meydana gelen li elementini ul'ye child olarak ata
   todoUl.appendChild(li);
+};
+
+//? Enter tusu ile ekleme mumkun olsun
+todoInput.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    addBtn.click();
+  }
+});
+
+//? Baslangicta input aktif olsun
+window.onload = function () {
+  todoInput.focus();
 };
