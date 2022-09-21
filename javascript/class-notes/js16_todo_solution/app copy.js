@@ -1,31 +1,53 @@
+//?seciciler:
+
 const addBtn = document.getElementById(`todo-button`);
 const todoInput = document.getElementById(`todo-input`);
-const todoUl = document.getElementById(`todo-ul`);
+const newList = document.getElementById(`todo-ul`);
+
+let eklenenler = JSON.parse(localStorage.getItem(`EKLE`)) 
+|| [];
+
+const eklenenleriRenderEt = () => {
+  eklenenler.forEach((ekli) => {
+    createElement(ekli);
+  });
+};
+
+eklenenleriRenderEt();
 
 addBtn.addEventListener(`click`, () => {
   if(todoInput.value.trim() === ``) {
     alert(`Please enter new todo`);
   } else {
+    //! bose degilse bir obje olusturuyoruz.
     const newTodo = {
       kimlik : new Date().getTime(),
-      tamamlandi : false,
+      yapildi : false,
       yazi : todoInput.value,
     };
-    yapilacaklar(newTodo);
-  };
+    // yeniListe(newTodo);
+    elementOlFunc(newTodo);
+    todoInput.value = ``;
+
+    eklenenler.push(newTodo);
+    localStorage.getItem(`EKLE`, JSON.stringify(eklenenler));
+    console.log(eklenenler);
+    
+  }
 });
 
-const yapilacaklar = (newTodo) => {
-  const {kimlik, tamamlandi, yazi} = newTodo;
+
+function elementOlFunc(newTodo){
+  const {kimlik, yapildi, yazi} = newTodo;
 
   const liste = document.createElement(`li`);
   liste.setAttribute(`id`, kimlik);
 
-  tamamlandi && liste.classList.add(`completed`);
-
+  // newTodo.yapildi ? liste.classList.add(`completed`) : ``;
+  yapildi && liste.classList.add(`completed`);
 
   const okIcon = document.createElement(`i`);
-  okIcon.setAttribute(`class`, `fas fa-check`);
+  okIcon.setAttribute(`class`, `fa-regular fa-circle-check`);
   liste.appendChild(okIcon);
 
   const yazilar = document.createElement(`p`);
@@ -53,10 +75,14 @@ newList.addEventListener(`click`, (e) => {
 todoInput.addEventListener(`keydown`, (e) => {
   if(e.code === `Enter`) {
     addBtn.click();
-};
+  };
+});
 
-const prg = document.createElement(`p`);
-const pTextNode = document.createTextNode(text);
-prg.appendChild(pTextNode);
-liste.appendChild(prg);
+addBtn.addEventListener(`click`, () => {
+  todoInput.focus();
+})
+
+window.onload = function () {
+  todoInput.focus();
+};
 
