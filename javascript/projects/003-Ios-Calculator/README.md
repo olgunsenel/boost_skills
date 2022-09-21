@@ -76,5 +76,5 @@ Build a Calculator that is functionally similar to an ios device calculator.
 - Step 5: Deploy your application on Github template to showcase your app within your team.
 
 
-<center> ⌛ Happy Coding  ✍ </center>
+<p align="center"> ✍ Happy Coding ⌛ <p>
 

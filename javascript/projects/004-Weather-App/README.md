@@ -34,4 +34,4 @@ User story;
 🔥 You don’t need to create a new template for this project, you can use this repository template for html and css. We will be concerned in javascript side.
 
 
-<center> ⌛ Happy Coding  ✍ </center>
+<p align="center"> ✍ Happy Coding ⌛ <p>
