@@ -27,6 +27,32 @@ const yapilacaklar = (newTodo) => {
   const okIcon = document.createElement(`i`);
   okIcon.setAttribute(`class`, `fas fa-check`);
   liste.appendChild(okIcon);
+
+  const yazilar = document.createElement(`p`);
+  const pTextNode = document.createTextNode(yazi);
+  yazilar.appendChild(pTextNode);
+  liste.appendChild(yazilar);
+
+  const deleteIcon = document.createElement(`i`);
+  deleteIcon.setAttribute(`class`, `fa-regular fa-square-minus`);
+  liste.appendChild(deleteIcon);
+
+  newList.appendChild(liste);
+  
+  console.log(liste);
+};
+
+newList.addEventListener(`click`, (e) => {
+  if(e.target.classList.contains(`fa-square-minus`)){
+    e.target.parentElement.remove();
+  } else if(e.target.classList.contains(`fa-circle-check`)){
+    e.target.parentElement.classList.toggle(`checked`);
+  };
+});
+
+todoInput.addEventListener(`keydown`, (e) => {
+  if(e.code === `Enter`) {
+    addBtn.click();
 };
 
 const prg = document.createElement(`p`);
