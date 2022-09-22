@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(90, 88, 88);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 600px;
+  height: 700px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  border-radius: 10px;
+  background-color: rgba(157, 245, 242, 0.3);
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-box{
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.product-box img{
+  width: 33%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 14px;
+}
+
+.price-box{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.price{
+  font-size: 25px;
+  font-weight: 700;
+  margin: 10px;
+  color: firebrick;
+}
+
+.counter{
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.counter button{
+  padding: 7px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  /* color: white; */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.counter button:active{
+  background-color: rgb(255, 0, 0);
+  transform: scale(0.8);
+}
+
+.count-number{
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+}
+
+.remove{
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(255, 0, 0);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.remove:active{
+  background-color: yellow;
+  transform: scale(0.9);
+}
+
+.total{
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 10px;
+}
