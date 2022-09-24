@@ -1,5 +1,5 @@
 //*=================================================
-//*              ASYNC-AWAIT
+//*               ASYNC-AWAIT
 //*=================================================
 //? Async-Await ECMAScript 2017 ile Javascript diline eklenmistir.
 //? Aslinda Promise yapisinin syntax olarak basitlestirilmis halidir.
@@ -17,3 +17,15 @@
 //* Await, promise-temelli herhangi bir fonksiyonun onune getirilerek getirildigi
 //* satirdaki kodun durudurulmasini saglar. Yapilan istek yerine getirilip sonuc
 //* degerlerinin dondurulmesine ile kodun calismasi devam eder.
+
+const getNews = async function () {
+  const API_KEY = "55e3f1fdc1c94581b6b11537c9b8f8bf";
+
+  const url =
+    "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + API_KEY;
+
+  const res = await fetch(url);
+  console.log(res);
+};
+
+getNews();
