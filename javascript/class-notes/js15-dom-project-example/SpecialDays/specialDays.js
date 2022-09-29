@@ -7,6 +7,7 @@ const dates = {
   "Selim Doğdu" : `2017-11-09`,
   "Kerim Doğdu" : `2019-11-03`
 };
+let known = [];
 
 
 let kalan = Number(document.querySelector(`.remain`).textContent);
@@ -20,25 +21,56 @@ document.querySelector(`.check-btn`).addEventListener(`click`, () => {
   let indexNo = Object.values(dates).indexOf(guessDate)
   // const secretDay = document.querySelector(`.secret-date`).innerHTML
   console.log(indexNo);
-
-
   if(!guessDate){
     infoMessage.textContent = `Lütfen aşağıdan bizim için önemli tarihlerden birini seç :D`
     infoMessage.style.color = `red`
     //! dates objesinin value'su girilen tarih degerini iceriyorsa
   }else if(Object.values(dates).includes(guessDate)) {
-    let known = [];
-    known.push(guessDate);
-    console.log(known);
-    if(guessDate in known) {
+    if(known.includes(guessDate)) {
+      console.log(typeof known, known);
       infoMessage.textContent = `Bu tarihi daha once girdin :P`;
       infoMessage.style.color = `red`;
-    }else{
+      document.querySelector(`.date-input`).focus();
+      document.querySelector(`.date-input`).value = ``;
+    }else {
+      known.push(guessDate);
       kalan--;
       if(kalan > 0) {
         document.querySelector(`.remain`).innerHTML = kalan;
         infoMessage.innerHTML = `<br> <img src="https://c.tenor.com/sZAFBih2R54AAAAC/minions.gif" width="250">`;
-        // bodyBgColor.classList.add(`bg-danger`);
+        document.querySelector("body").classList.add("bodybg")
+        //! sakli tarihi, elde ettigim index numarasinin key adi ile eslestirip yazdiriyorum.
+        document.querySelector(`.secret-date`).innerHTML = Object.keys(dates)[indexNo];
+        document.querySelector(`.check-btn`).addEventListener("click", () => {
+          document.querySelector(`.date-input`).focus();
+          document.querySelector(`.date-input`).value = ``;
+        })
+      }else {
+        document.querySelector(`.check-btn`).disabled = true;
+        document.querySelector(`.remain-all`).textContent = `Tebrikler, hepsini bildin!`;
+        document.querySelector(`.remain-all`).style.color = `dodgerblue`;
+      }};
+  }else {
+    infoMessage.textContent = `Böyle bir tarih bulunamadı. Tekrar dene!`
+    infoMessage.style.color = `red`
+    document.querySelector(`.secret-date`).innerHTML = "?"
+    document.querySelector("body").classList.remove("bodybg");
+    document.querySelector(`.date-input`).focus();
+    document.querySelector(`.date-input`).value = "";
+  }
+});
+document.querySelector(`.date-input`).addEventListener(`keydown`, (e) => {
+  if(e.keyCode === 13) {
+    document.querySelector(`.check-btn`).click();
+    document.querySelector(`.date-input`).focus();
+  }
+});
+window.addEventListener("load", ()=>{
+  document.querySelector(`.date-input`).focus();
+});
+
+
+    // bodyBgColor.classList.add(`bg-danger`);
         // counter = 0;
         // const correctInterval = setInterval(()=>{
         //   bodyBgColor.setAttribute(`class`, `bodybg`);
@@ -48,40 +80,3 @@ document.querySelector(`.check-btn`).addEventListener(`click`, () => {
         //   clearInterval(correctInterval)
         //   }
         // }, 100);
-        document.querySelector("body").classList.add("bodybg")
-        //! sakli tarihi, elde ettigim index numarasinin key adi ile eslestirip yazdiriyorum.
-        document.querySelector(`.secret-date`).innerHTML = Object.keys(dates)[indexNo];
-        document.querySelector(`.check-btn`).addEventListener("click", () => {
-          guessDate.focus();
-        });
-        document.querySelector(`.date-input`).value = ``;
-  
-      } else {
-        document.querySelector(`.check-btn`).disabled = true;
-        document.querySelector(`.remain-all`).textContent = `Tebrikler, hepsini bildin!`;
-        document.querySelector(`.remain-all`).style.color = `dodgerblue`;
-      }
-    }else {
-      infoMessage.textContent = `Böyle bir tarih bulunamadı. Tekrar dene!`
-      infoMessage.style.color = `red`
-      document.querySelector(`.secret-date`).innerHTML = "?"
-      document.querySelector("body").classList.remove("bodybg");
-    }
-    document.querySelector(`.date-input`).focus();
-    document.querySelector(`.date-input`).value = "";
-    }
-});
-
-document.querySelector(`.date-input`).addEventListener(`keydown`, (e) => {
-  if(e.keyCode === 13) {
-    document.querySelector(`.check-btn`).click();
-    // window.onload()
-  }
-});
-
-window.addEventListener("load", ()=>{
-  document.querySelector(`.date-input`).focus();
-});
-
-
-// 
