@@ -18,6 +18,8 @@ class Book {
     this.title = title;
     this.year = year;
   }
+
+  //! Bu kisimda yazilan fonksiyonlar aslinda prototype alaninda bulunur.
   getAge() {
     return new Date().getFullYear() - this.year;
   }
