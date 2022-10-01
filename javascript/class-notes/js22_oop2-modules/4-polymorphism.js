@@ -36,7 +36,7 @@ class Magazine extends Book {
     this.month = month;
   }
   //! Overrided Metot (Parent class'daki bir metodun farkli
-  //! fonksiyonellikle fakat ayni isimle tanimlanmasi)
+  //! fonksiyonellikle  ve ayni parametre listesi ile yeniden tanimlanmasi)
   getSummary() {
     return `${this.title} was writtten by ${this.author} in ${this.year} in ${this.month}`;
   }
