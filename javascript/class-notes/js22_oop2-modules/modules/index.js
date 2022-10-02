@@ -1,11 +1,14 @@
 console.log("JS Modules is running");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import karesi, {WHW, dec, inc, sum, counter} from `./mymodule.js`;
 
 console.log(`WHW : >>, WHW`);
 =======
+=======
+>>>>>>> cf16bf3420f42f821e134cd3bbe6d547b77f0181
 import karesi, {
   WHW as W,
   WORKING_HOURS_WEEK,
@@ -33,4 +36,7 @@ inc();
 console.log("counter :>> ", counter);
 selam();
 ugurla();
+<<<<<<< HEAD
+>>>>>>> cf16bf3420f42f821e134cd3bbe6d547b77f0181
+=======
 >>>>>>> cf16bf3420f42f821e134cd3bbe6d547b77f0181
