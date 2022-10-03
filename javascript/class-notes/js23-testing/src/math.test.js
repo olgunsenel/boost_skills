@@ -28,13 +28,19 @@ describe("calculateTotal", () => {
 });
 
 describe("celsiusToFahrenheit", () => {
-  //
+  it("should exist", () => {
+    expect(celsiusToFahrenheit).toBeDefined();
+  });
 });
 
 describe("fahrenheitToCelsius", () => {
-  //
+  it("should exist", () => {
+    expect(fahrenheitToCelsius).toBeDefined();
+  });
 });
 
 describe("fibonacci", () => {
-  //
+  it("should exist", () => {
+    expect(fibonacci).toBeDefined();
+  });
 });
