@@ -18,7 +18,13 @@ describe("calculateTotal", () => {
     expect(calculateTotal).toBeDefined();
   });
 
-  it("should return a number", () => {});
+  it("should return a number", () => {
+    expect(calculateTotal(100, 0.2)).toBe(120);
+  });
+
+  it("should return with default VAT", () => {
+    expect(calculateTotal(200)).toBe(236);
+  });
 });
 
 describe("celsiusToFahrenheit", () => {
