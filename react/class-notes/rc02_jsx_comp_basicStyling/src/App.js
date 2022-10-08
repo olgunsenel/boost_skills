@@ -3,6 +3,8 @@ import React from "react";
 //? React,JSX kullanmaktadir.
 //? JSX'de, HTMl elementleri dogrudan JS icerisinde kullanilabilir
 
+import Header from "./components/Header";
+
 //! Componentler, HTML,CSS ve JS kodlarindan meydana gelmiş
 //! bir kod parcacigidir.
 
@@ -14,9 +16,9 @@ import React from "react";
 //! dondurmelidir.container icin div, article, header, <> v.b
 //! herhangi bir element kullanilabilir.
 
-//? App componentinin tanimlanmasi
+//? App componentinin function declaration ile tanimlanmasi
 function App() {
-  return <h1>JSX & COMPONENTS & BASİC STYLING</h1>;
+  return <Header />;
 }
 
 export default App;
