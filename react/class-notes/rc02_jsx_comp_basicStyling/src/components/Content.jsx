@@ -9,6 +9,8 @@
 //* class isimleri icin className kullanilir.
 //* Material UI, Styled Component, Sass, Bootstrap v.b harici kutuphaneler kullanilabilir.
 
+//?Harici stillneidmre dosyasi
+
 // ? Dahili bir resim eklemek icin import yapmak gereklidir.
 
 const Content = () => {
